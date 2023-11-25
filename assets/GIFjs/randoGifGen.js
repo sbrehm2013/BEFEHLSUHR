@@ -12,7 +12,7 @@ let playCount = 0; // Counter to track the number of times the GIF has played
 let gifIsPlaying = false; // Flag to indicate whether the GIF is currently playing
 
 function displayRandomStarWarsGIF() {
-  if (playCount < 3) { // Check if the GIF has played less than three times
+  if (playCount < 1) { // Check if the GIF has played less than three times
     if (!gifIsPlaying) { // Check if the GIF is not already playing
       const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length); // Generate a random index
       const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex]; // Get the random Star Wars GIF URL
