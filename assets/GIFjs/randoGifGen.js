@@ -6,7 +6,7 @@ const starWarsGifUrls = [
   'https://media.giphy.com/media/l3fZJdTi1q8DEibEk/giphy.gif'
 ];
 
-const gifContainer = document.getElementById('header4-0'); // Get the container element for displaying GIFs
+const gifContainer = document.getElementById('gifContainer'); // Get the container element for displaying GIFs
 
 let playCount = 0; // Counter to track the number of times the GIF has played
 
