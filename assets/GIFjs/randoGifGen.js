@@ -8,12 +8,12 @@ const starWarsGifUrls = [
 
 const gifContainer = document.getElementById('gifContainer'); // Get the container element for displaying GIFs
 
-let playCount = 0; // Counter to track the number of times the GIF has played
-let gifIsPlaying = false; // Flag to indicate whether the GIF is currently playing
+//let playCount = 0; // Counter to track the number of times the GIF has played
+//let gifIsPlaying = false; // Flag to indicate whether the GIF is currently playing
 
 function displayRandomStarWarsGIF() {
-  if (playCount < 1) { // Check if the GIF has played less than three times
-    if (!gifIsPlaying) { // Check if the GIF is not already playing
+ // if (playCount < 1) { // Check if the GIF has played less than three times
+   // if (!gifIsPlaying) { // Check if the GIF is not already playing
       const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length); // Generate a random index
       const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex]; // Get the random Star Wars GIF URL
 
@@ -26,13 +26,21 @@ function displayRandomStarWarsGIF() {
       gifContainer.appendChild(gifImage); // Add the Star Wars GIF image to the container
 
       gifImage.addEventListener('load', () => { // Wait for the GIF to load
+
+        setTimeout(() => {
+    gifImage.pause(); // Pause the GIF after 4 seconds
+  }, 4000); // 4 seconds in milliseconds
+        });
         gifImage.play(); // Play the GIF
-        playCount++; // Increment the play count
-        gifIsPlaying = true;
+        //playCount++; // Increment the play count
+        //gifIsPlaying = true;
       });
 
-      gifImage.addEventListener('ended', () => { // Listen for the GIF playback end
-        gifIsPlaying = false; // Reset the playing flag
+     // gifImage.addEventListener('ended', () => { // Listen for the GIF playback end
+       // gifIsPlaying = false; // Reset the playing flag
+
+
+        
         gifContainer.innerHTML = ''; // Remove the GIF after playback
       });
     }
