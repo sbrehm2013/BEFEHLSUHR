@@ -27,7 +27,7 @@ let gifIntervalId = null;
           setTimeout(() => {
             gifImage.pause();
             gifContainer.style.display = 'none';
-          }, 26000);
+          }, 4000);
         }, 30000);
       }
     });
