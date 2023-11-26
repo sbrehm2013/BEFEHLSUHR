@@ -11,10 +11,10 @@
   'https://media.giphy.com/media/l3fZJdTi1q8DEibEk/giphy.gif',
     ];
 
-    let gifIntervalId = null;
+    let gifIntervalId = 0;
 
     startGIFButton.addEventListener('click', () => {
-      if (!gifIntervalId) {
+      if (gifIntervalId == 0) {
         gifIntervalId = setInterval(() => {
           const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length);
           const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex];
@@ -32,9 +32,9 @@
     });
 
     stopGIFButton.addEventListener('click', () => {
-      if (gifIntervalId) {
+      if (gifIntervalId != 0) {
         clearInterval(gifIntervalId);
-        gifIntervalId = null;
+        gifIntervalId = 0;
         gifContainer.style.display = 'none';
         gifImage.pause();
       }
