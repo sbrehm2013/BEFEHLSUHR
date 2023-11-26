@@ -30,7 +30,7 @@ function displayRandomStarWarsGIF() {
         setTimeout(() => {
     gifImage.pause(); // Pause the GIF after 4 seconds
   }, 4000); // 4 seconds in milliseconds
-        });
+ 
         gifImage.play(); // Play the GIF
         //playCount++; // Increment the play count
         //gifIsPlaying = true;
