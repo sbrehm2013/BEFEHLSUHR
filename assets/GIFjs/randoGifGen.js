@@ -4,17 +4,17 @@
     const stopGIFButton = document.getElementById('stopGIFButton');
 
     const starWarsGifUrls = [
-  'https://media.giphy.com/media/Lv0PZSJUG7PwYAp0O8/giphy.gif', 
-  'https://media.giphy.com/media/vXA4xUNBBBEjuZLDNK/giphy.gif', 
-  'https://media.giphy.com/media/d3g7n2HliLDCUNrO/giphy.gif', 
-  'https://media.giphy.com/media/l3fZGLayrtM0DgV6U/giphy.gif', 
-  'https://media.giphy.com/media/l3fZJdTi1q8DEibEk/giphy.gif',
+      'https://media.giphy.com/media/3oEduXTc4Ol57k/giphy.gif',
+      'https://media.giphy.com/media/l41l98181qAF2/giphy.gif',
+      'https://media.giphy.com/media/3o7bu435h72A8/giphy.gif',
+      'https://media.giphy.com/media/3oEd9p4BCAN61C/giphy.gif',
+      'https://media.giphy.com/media/3oKIP7773s25e/giphy.gif',
     ];
 
-    let gifIntervalId = 0;
+    let gifIntervalId = null;
 
     startGIFButton.addEventListener('click', () => {
-      if (gifIntervalId == 0) {
+      if (!gifIntervalId) {
         gifIntervalId = setInterval(() => {
           const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length);
           const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex];
@@ -32,11 +32,10 @@
     });
 
     stopGIFButton.addEventListener('click', () => {
-      if (gifIntervalId != 0) {
+      if (gifIntervalId) {
         clearInterval(gifIntervalId);
-        gifIntervalId = 0;
+        gifIntervalId = null;
         gifContainer.style.display = 'none';
-        gifImage.pause();
+        //gifImage.pause();
       }
     });
-
