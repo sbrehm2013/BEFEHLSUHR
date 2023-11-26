@@ -7,6 +7,8 @@ const starWarsGifUrls = [
 ];
 
 const gifContainer = document.getElementById('gifContainer'); // Get the container element for displaying GIFs
+const showGIFButton = document.getElementById('showGIFButton');
+
 
 function displayRandomStarWarsGIF() {
   const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length); // Generate a random index
