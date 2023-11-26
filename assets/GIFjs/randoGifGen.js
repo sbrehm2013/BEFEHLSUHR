@@ -7,34 +7,36 @@ const starWarsGifUrls = [
 ];
 
 const gifContainer = document.getElementById('gifContainer'); // Get the container element for displaying GIFs
-const showGIFButton = document.getElementById('showGIFButton');
+ const gifImage = document.getElementById('gifImage');
+    const startGIFButton = document.getElementById('startGIFButton');
+    const stopGIFButton = document.getElementById('stopGIFButton');
 
 
-function displayRandomStarWarsGIF() {
-  const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length); // Generate a random index
-  const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex]; // Get the random Star Wars GIF URL
+let gifIntervalId = null;
 
-  const gifImage = document.createElement('img'); // Create an image element
-  gifImage.src = randomStarWarsGIFUrl; // Set the image source to the random Star Wars GIF URL
-  gifImage.style.width = '100%'; // Set the image width to 100% of the container
-  gifImage.style.height = 'auto'; // Maintain the image's aspect ratio
-  gifImage.style.display = 'none'; // Initially hide the GIF
+    startGIFButton.addEventListener('click', () => {
+      if (!gifIntervalId) {
+        gifIntervalId = setInterval(() => {
+          const randomIndex = Math.floor(Math.random() * starWarsGifUrls.length);
+          const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex];
 
-  gifContainer.innerHTML = ''; // Clear the container before adding the new GIF
-  gifContainer.appendChild(gifImage); // Add the Star Wars GIF image to the container
+          gifImage.src = randomStarWarsGIFUrl;
+          gifContainer.style.display = 'block';
+          gifImage.play();
 
-  setTimeout(() => { // Show the GIF after 4 seconds
-    gifImage.style.display = 'block';
-    gifImage.play(); // Play the GIF
+          setTimeout(() => {
+            gifImage.pause();
+            gifContainer.style.display = 'none';
+          }, 4000);
+        }, 30000);
+      }
+    });
 
-    setTimeout(() => { // Pause the GIF after 4 seconds
-      gifImage.pause();
-    }, 4000);
-  }, 4000);
-}
-
-// Display the first random Star Wars GIF immediately
-displayRandomStarWarsGIF();
-
-// Repeat displaying random Star Wars GIFs every 30 seconds
-setInterval(displayRandomStarWarsGIF, 30000);
+    stopGIFButton.addEventListener('click', () => {
+      if (gifIntervalId) {
+        clearInterval(gifIntervalId);
+        gifIntervalId = null;
+        gifContainer.style.display = 'none';
+        gifImage.pause();
+      }
+    });
