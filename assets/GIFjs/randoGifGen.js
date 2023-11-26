@@ -1,18 +1,17 @@
-const starWarsGifUrls = [
+    const gifContainer = document.getElementById('gifContainer');
+    const gifImage = document.getElementById('gifImage');
+    const startGIFButton = document.getElementById('startGIFButton');
+    const stopGIFButton = document.getElementById('stopGIFButton');
+
+    const starWarsGifUrls = [
   'https://media.giphy.com/media/Lv0PZSJUG7PwYAp0O8/giphy.gif', 
   'https://media.giphy.com/media/vXA4xUNBBBEjuZLDNK/giphy.gif', 
   'https://media.giphy.com/media/d3g7n2HliLDCUNrO/giphy.gif', 
   'https://media.giphy.com/media/l3fZGLayrtM0DgV6U/giphy.gif', 
-  'https://media.giphy.com/media/l3fZJdTi1q8DEibEk/giphy.gif'
-];
+  'https://media.giphy.com/media/l3fZJdTi1q8DEibEk/giphy.gif',
+    ];
 
-const gifContainer = document.getElementById('gifContainer'); // Get the container element for displaying GIFs
- const gifImage = document.getElementById('gifImage');
-    const startGIFButton = document.getElementById('startGIFButton');
-    const stopGIFButton = document.getElementById('stopGIFButton');
-
-
-let gifIntervalId = null;
+    let gifIntervalId = null;
 
     startGIFButton.addEventListener('click', () => {
       if (!gifIntervalId) {
@@ -40,3 +39,4 @@ let gifIntervalId = null;
         gifImage.pause();
       }
     });
+
