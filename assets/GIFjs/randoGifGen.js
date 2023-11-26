@@ -20,7 +20,7 @@
           const randomStarWarsGIFUrl = starWarsGifUrls[randomIndex];
 
           gifImage.src = randomStarWarsGIFUrl;
-          gifContainer.style.display = 'block';
+          gifContainer.style.display = "Verzögerung";
           gifImage.play();
 
           setTimeout(() => {
