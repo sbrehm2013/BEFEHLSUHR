@@ -9,15 +9,14 @@
 
     function displayOriginalGIF() {
       gifImage.src = originalGifUrl; // Set the image source to the original GIF URL
-      gifImage.play(); // Play the GIF
+      //gifImage.play(); // Play the GIF
     }
 
     function displayFlashGIF() {
       gifImage.src = flashGifUrl; // Set the image source to the flash GIF URL
-      gifImage.play(); // Play the flash GIF
-      setTimeout(() => { // Pause the flash GIF after 4 seconds
-        gifImage.pause();
-      }, 4000);
+     // gifImage.play(); // Play the flash GIF
+      //setTimeout(() => //{gifImage.pause();}, 
+                // 4000);
     }
 
     startButton.addEventListener('click', () => {
@@ -33,8 +32,8 @@
       if (gifIntervalId) {
         clearInterval(gifIntervalId);
         gifIntervalId = null;
-        gifImage.pause();
+        //gifImage.pause();
       }
     });
 
-//Test 456
+//Test 789
