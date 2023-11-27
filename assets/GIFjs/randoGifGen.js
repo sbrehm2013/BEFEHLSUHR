@@ -21,6 +21,7 @@
     }
 
     startButton.addEventListener('click', () => {
+    alertHeader.innerText = "VERZÖGERUNG";
       if (!gifIntervalId) {
        // displayOriginalGIF();  
           //setTimeout(displayOriginalGIF, 30000);
