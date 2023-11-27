@@ -9,24 +9,24 @@
 
     function displayOriginalGIF() {
       gifImage.src = originalGifUrl; // Set the image source to the original GIF URL
-     // gifImage.play(); // Play the GIF
     }
 
     function displayFlashGIF() {
       gifImage.src = flashGifUrl; // Set the image source to the flash GIF URL
-     // gifImage.play(); // Play the flash GIF
-     // setTimeout(() => {gifImage.pause();}, 
-     //            4000);
     }
 
     startButton.addEventListener('click', () => {
       if (!gifIntervalId) {
         displayOriginalGIF();  
+          setTimeout(displayOriginalGIF, 30000);
+          displayFlashGIF(); 
+          setTimeout(displayFlashGIF, 4000);          
         gifIntervalId = setInterval(() => {
           displayOriginalGIF(); // Display the original GIF for 30 seconds
           setTimeout(displayFlashGIF, 26000); // Display the flash GIF for 4 seconds
         }, 30000);
       }
+        document.getElementById("gifImage").style.display = "block";
     });
 
     stopButton.addEventListener('click', () => {
@@ -34,7 +34,6 @@
         clearInterval(gifIntervalId);
         gifIntervalId = null;
         document.getElementById("gifImage").style.display = "none";
-        //gifImage.pause();
       }
     });
 
