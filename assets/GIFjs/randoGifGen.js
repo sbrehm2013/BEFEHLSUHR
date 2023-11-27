@@ -40,6 +40,7 @@
         clearInterval(gifIntervalId);
         gifIntervalId = null;
         document.getElementById("gifImage").style.display = "none";
+        alertHeader.innerText = "das Ende, Schlampe";
       }
     });
 
