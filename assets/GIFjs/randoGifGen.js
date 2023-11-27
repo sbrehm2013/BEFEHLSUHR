@@ -2,14 +2,14 @@
     const startButton = document.getElementById('startButton');
     const stopButton = document.getElementById('stopButton');
 
-    const originalGifUrl = 'https://giphy.com/gifs/motion-ui-ux-l41lO3XKps6PUdUsw/giphy.gif'; // Original GIF URL
-    const flashGifUrl = 'https://giphy.com/gifs/dance-dancing-bad-batch-Lv0PZSJUG7PwYAp0O8/giphy.gif'; // Flash GIF URL
+    const originalGifUrl = 'https://giphy.com/embed/l41lO3XKps6PUdUsw'; // Original GIF URL
+    const flashGifUrl = 'https://giphy.com/embed/Lv0PZSJUG7PwYAp0O8'; // Flash GIF URL
 
     let gifIntervalId = null; // Interval ID for the GIF display timer
 
     function displayOriginalGIF() {
       gifImage.src = originalGifUrl; // Set the image source to the original GIF URL
-      //gifImage.play(); // Play the GIF
+     // gifImage.play(); // Play the GIF
     }
 
     function displayFlashGIF() {
@@ -36,4 +36,4 @@
       }
     });
 
-//Test 789
+//Test 123
