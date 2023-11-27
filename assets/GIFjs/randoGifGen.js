@@ -10,12 +10,12 @@
 
     function displayOriginalGIF() {
       gifImage.src = originalGifUrl; // Set the image source to the original GIF URL
-      alertHeader.innerHTML = "VERZÖGERUNG";
+      alertHeader.innerText = "VERZÖGERUNG";
     }
 
     function displayFlashGIF() {
       gifImage.src = flashGifUrl; // Set the image source to the flash GIF URL
-      alertHeader.innerHTML = "GEBEN SIE DEN BEFEHL!!!!!";
+      alertHeader.innerText = "GEBEN SIE DEN BEFEHL!!!!!";
      // alertHeader.style.color = "white";
      // alertHeader.style.fontWeight = 'bold';
     }
