@@ -21,7 +21,7 @@
 
     startButton.addEventListener('click', () => {
       if (!gifIntervalId) {
-        displayFlashGIF();  
+        displayOriginalGIF();  
         gifIntervalId = setInterval(() => {
           displayOriginalGIF(); // Display the original GIF for 30 seconds
           setTimeout(displayFlashGIF, 26000); // Display the flash GIF for 4 seconds
