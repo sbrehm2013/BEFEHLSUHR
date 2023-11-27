@@ -17,14 +17,14 @@
 
     startButton.addEventListener('click', () => {
       if (!gifIntervalId) {
-        displayOriginalGIF();  
-          setTimeout(displayOriginalGIF, 30000);
-          displayFlashGIF(); 
-          setTimeout(displayFlashGIF, 4000);          
+       // displayOriginalGIF();  
+          //setTimeout(displayOriginalGIF, 30000);
+          //displayFlashGIF(); 
+          //setTimeout(displayFlashGIF, 4000);          
         gifIntervalId = setInterval(() => {
           displayOriginalGIF(); // Display the original GIF for 30 seconds
-          setTimeout(displayFlashGIF, 26000); // Display the flash GIF for 4 seconds
-        }, 30000);
+          setTimeout(displayFlashGIF, 30000); // Display the flash GIF for 4 seconds
+        }, 35000);
       }
         document.getElementById("gifImage").style.display = "block";
     });
