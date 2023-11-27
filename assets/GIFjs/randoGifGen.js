@@ -45,6 +45,4 @@
         gifImage.pause();
       }
     });
-  </script>
-</body>
-</html>
+
