@@ -49,10 +49,11 @@ function startTimer() {
 
 // Stop timer function
 function stopTimer() {
+startTimer().stop; 
   if (timerInterval) {
     clearInterval(timerInterval);
   }
-}
+} stopTimer();
 
 // Update timer display function
 function updateTimerDisplay() {
