@@ -32,7 +32,7 @@ timerElement = document.getElementById('timerHeader');
 
 // Start timer function
 function startTimer() {
-  if (remainingTime > 0) {
+  while (remainingTime > 0) {
     timerInterval = setInterval(() => {
       remainingTime--;
       updateTimerDisplay();
