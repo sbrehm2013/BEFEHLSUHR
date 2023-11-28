@@ -42,10 +42,10 @@ function startTimer() {
         remainingTime = countdownTime;
       }
     }, 1000); // Update timer every second
-      startTimer();
+      
   }
     
-}
+} startTimer();
 
 // Stop timer function
 function stopTimer() {
