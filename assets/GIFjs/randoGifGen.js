@@ -32,7 +32,8 @@ timerElement = document.getElementById('timerHeader');
 
 // Start timer function
 function startTimer() {
-  while (remainingTime > 0) {
+    while (remainingTime > 0){
+  if (remainingTime > 0) {
     timerInterval = setInterval(() => {
       remainingTime--;
       updateTimerDisplay();
@@ -43,6 +44,7 @@ function startTimer() {
       }
     }, 1000); // Update timer every second
   }
+    }
 }
 
 // Stop timer function
